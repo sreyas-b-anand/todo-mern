@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
-import Navbar from "../components/Navbar";
+
 
 const EditForm = () => {
   const { user } = useAuthContext();
