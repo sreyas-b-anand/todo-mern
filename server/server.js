@@ -22,16 +22,16 @@ app.get('*', (req, res) => res.sendFile(path.join(__dirname, '/client/build/inde
 mongoose.connect(process.env.DBURI)
   .then(result => {
     app.listen(process.env.PORT);
-    console.log('connected');
+    //console.log('connected');
   })
   .catch(err => console.log(err));
 
-console.log(process.env.PORT);
+//console.log(process.env.PORT);
 
 // Middleware
 app.use(express.json());
 app.use((req, res, next) => {
-  console.log(req.url, req.method);
+  //console.log(req.url, req.method);
   next();
 });
 
