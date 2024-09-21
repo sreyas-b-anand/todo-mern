@@ -1,4 +1,4 @@
-import Tasks from '../models/taskSchema.js'; 
+import Tasks from '../models/taskschema.js'; 
 import mongoose from 'mongoose';
 
 // Get all tasks
