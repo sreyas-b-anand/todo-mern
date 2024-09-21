@@ -1,15 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useLogout } from "../hooks/useLogout";
+import { Link } from "react-router-dom";
+
 import { useAuthContext } from "../hooks/useAuthContext";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { DisplayContext } from "../pages/Home";
 import { CgProfile } from "react-icons/cg";
 
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import UserProfileAccordion from "./userProfile";
 
 const Navbar = ({accordionDisplay , setAccordionDisplay}) => {
  
@@ -24,7 +19,7 @@ const Navbar = ({accordionDisplay , setAccordionDisplay}) => {
         <p className=" text-navText flex items-center justify-center font-bold  text-2xl ml-9 gap-5">
           Tasker
         </p>
-        <nav className="mr-8 gap-8 flex">
+        <nav className="mr-8 gap-2 flex">
           <Link
             onClick={() => {
               setDisplay(!display);

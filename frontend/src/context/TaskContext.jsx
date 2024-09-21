@@ -16,6 +16,7 @@ export const tasksReducer = (state, action) => {
       return {
         tasks: state.tasks.filter((w) => w._id !== action.payload._id)
       }
+      
     default:
       return state
   }

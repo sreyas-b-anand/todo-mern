@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 export const DisplayContext = createContext();
 const Home = () => {
+  
   const { logout } = useLogout();
   const navigate = useNavigate();
   const [accordionDisplay, setAccordionDisplay] = useState(null);
@@ -44,7 +45,9 @@ const Home = () => {
   return (
     <>
       <div className=" home w-screen h-screen bg-bg absolute   -z-10">
-        <DisplayContext.Provider value={{ display, setDisplay }}>
+        <DisplayContext.Provider
+          value={{ display, setDisplay }}
+        >
           <Navbar
             accordionDisplay={accordionDisplay}
             setAccordionDisplay={setAccordionDisplay}
@@ -66,11 +69,15 @@ const Home = () => {
                 ? " opacity-[0.2] w-screen  flex items-center justify-center flex-wrap p-12 gap-8 absolute -z-10"
                 : "opacity-[1] w-screen  flex items-center justify-center flex-wrap p-12 gap-8 absolute -z-10"
             }
-          >
+           >
             {tasks &&
-              tasks.map((task, index) => {
-                return <TaskDetails key={index} task={task} />;
-              })}
+              tasks.map((task, index) => (
+                <div key={index}>
+                  <TaskDetails task={task} />
+                </div>
+              ))}
+              
+        
           </div>
 
           {display && (
