@@ -1,11 +1,11 @@
-const Tasks = require('../models/taskschema');
-const mongoose = require('mongoose');
+import Tasks from '../models/taskSchema.js'; 
+import mongoose from 'mongoose';
 
 // Get all tasks
-const getTasks = async (req, res) => {
+export const getTasks = async (req, res) => {
   try {
-    const user_id = req.user._id
-    const tasks = await Tasks.find({user_id}).sort({ createdAt: -1 });
+    const user_id = req.user._id;
+    const tasks = await Tasks.find({ user_id }).sort({ createdAt: -1 });
     res.status(200).json(tasks);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch tasks' });
@@ -13,7 +13,7 @@ const getTasks = async (req, res) => {
 };
 
 // Get a single task
-const getTask = async (req, res) => {
+export const getTask = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -34,14 +34,12 @@ const getTask = async (req, res) => {
 };
 
 // Create a new task
-const createTask = async (req, res) => {
-  const { heading , desc , due , status} = req.body;
-
-
+export const createTask = async (req, res) => {
+  const { heading, desc, due, status } = req.body;
 
   try {
-    const user_id = req.user._id
-    const task = await Tasks.create({ heading , desc , due , status , user_id});
+    const user_id = req.user._id;
+    const task = await Tasks.create({ heading, desc, due, status, user_id });
     res.status(200).json(task);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -49,7 +47,7 @@ const createTask = async (req, res) => {
 };
 
 // Delete a task
-const deleteTask = async (req, res) => {
+export const deleteTask = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -70,7 +68,7 @@ const deleteTask = async (req, res) => {
 };
 
 // Update a task
-const updateTask = async (req, res) => {
+export const updateTask = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -88,12 +86,4 @@ const updateTask = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to update task' });
   }
-};
-
-module.exports = {
-  getTasks,
-  getTask,
-  createTask,
-  deleteTask,
-  updateTask,
 };
