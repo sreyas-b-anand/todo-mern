@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 export const getTasks = async (req, res) => {
   try {
     const user_id = req.user._id;
-    console.log(user_id)
+    //console.log(user_id)
     const tasks = await Tasks.find({ user_id }).sort({ createdAt: -1 });
     res.status(200).json(tasks);
   } catch (error) {
@@ -32,11 +32,11 @@ export const getTask = async (req, res) => {
     if (!task) {
       return res.status(404).json({ error: 'No such task' });
     }
-      console.log(task)
+      //console.log(task)
     // Return the task as JSON
     res.status(200).json(task);
   } catch (error) {
-    console.error("Error fetching task:", error); // Log the error for debugging
+    //console.error("Error fetching task:", error); // Log the error for debugging
     res.status(500).json({ error: 'Failed to fetch task' });
   }
 };

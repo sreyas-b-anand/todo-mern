@@ -27,7 +27,7 @@ const Home = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/tasker', {
+        const response = await fetch('/api/tasker', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -94,6 +94,10 @@ const Home = () => {
               <New />
             </div>
           )}
+
+          {!tasks && <div className="w-screen flex items-center justify-center h-screen " >
+            <p className="font-[Montserrat] font-semibold text-white">No  tasks to show.Add a Task</p>
+            </div>}
         </DisplayContext.Provider>
       </div>
     </>

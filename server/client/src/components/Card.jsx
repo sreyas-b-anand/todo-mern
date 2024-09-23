@@ -46,7 +46,7 @@ const TaskDetails = ({ task }) => {
       <article className="w-[100%] text-slate-600">
         <p>
           <strong>Deadline</strong>:{" "}
-          {/*formatDistanceToNow(task.due, { addSuffix: true })*/}
+          {formatDistanceToNow(task.due, { addSuffix: true })}
         </p>
       </article>
 
