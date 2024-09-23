@@ -6,18 +6,17 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMsg , setErrorMsg] = useState(null)
+  
   const { signup, error, isLoading } = useSignup();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!email || !password){
-      setErrorMsg("Fill out the fields")
-    }else{
+    
+      
     await signup(email, password);
-    navigate("/dashboard");
-    }
+    
+    
   };
 
   return (
@@ -68,7 +67,7 @@ const Signup = () => {
           </Link>
         </p>
 
-        {(errorMsg || error) && <div className="mt-4 text-red-600 text-center">{error || errorMsg}</div>}
+        {error && <div className="mt-4 text-red-600 text-center">{error }</div>}
       </form>
     </div>
   );

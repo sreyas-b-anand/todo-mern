@@ -1,17 +1,13 @@
 import { Link } from "react-router-dom";
 
 import { useAuthContext } from "../hooks/useAuthContext";
-import { useContext} from "react";
+import { useContext } from "react";
 import { DisplayContext } from "../pages/Home";
 import { CgProfile } from "react-icons/cg";
 
-
-const Navbar = ({accordionDisplay , setAccordionDisplay}) => {
- 
-  
+const Navbar = ({ accordionDisplay, setAccordionDisplay }) => {
   const { user } = useAuthContext();
-  const {display, setDisplay } = useContext(DisplayContext);
-  
+  const { display, setDisplay } = useContext(DisplayContext);
 
   return (
     <div className=" bg-navbg flex  items-center justify-between w-screen h-[80px] text-navText">
@@ -31,20 +27,25 @@ const Navbar = ({accordionDisplay , setAccordionDisplay}) => {
           </Link>
         </nav>
       </header>
-      {user && (
-        <div className="flex items-center text-gray-200 m-3  mr-9 gap-2 hover:cursor-pointer">
-          
-          <section>
+
+      <nav className="flex items-center text-gray-200 m-3  mr-9 gap-2 hover:cursor-pointer">
+        {user && (
+          <div>
             <CgProfile
-            size={'30px'}
+              size={"30px"}
               onClick={() => {
-                
                 setAccordionDisplay(!accordionDisplay);
               }}
             />
-          </section>
-        </div>
-      )}
+          </div>
+        )}
+        {!user && (
+          <div>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+          </div>
+        )}
+      </nav>
     </div>
   );
 };

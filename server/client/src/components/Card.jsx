@@ -19,7 +19,7 @@ const TaskDetails = ({ task }) => {
     const response = await fetch("/api/tasker/" + task._id, {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${user?.token}`,
       },
     });
     const json = await response.json();
@@ -28,7 +28,7 @@ const TaskDetails = ({ task }) => {
       dispatch({ type: "DELETE_TASK", payload: json });
     }
   };
-
+  
   
   return (
     <>
@@ -46,7 +46,7 @@ const TaskDetails = ({ task }) => {
       <article className="w-[100%] text-slate-600">
         <p>
           <strong>Deadline</strong>:{" "}
-          {formatDistanceToNow(new Date(task.due), { addSuffix: true })}
+          {/*formatDistanceToNow(task.due, { addSuffix: true })*/}
         </p>
       </article>
 

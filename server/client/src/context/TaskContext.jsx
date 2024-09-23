@@ -4,23 +4,34 @@ export const TaskContext = createContext()
 
 export const tasksReducer = (state, action) => {
   switch (action.type) {
-    case 'GET_TASKS': 
+    case 'GET_TASKS':
       return {
-        tasks: action.payload
-      }
+        tasks: action.payload,
+      };
+    
     case 'CREATE_TASK':
       return {
-        tasks: [action.payload, ...state.tasks]
-      }
+        tasks: [action.payload, ...state.tasks],
+      };
+    
     case 'DELETE_TASK':
       return {
-        tasks: state.tasks.filter((w) => w._id !== action.payload._id)
-      }
+        tasks: state.tasks.filter((w) => w._id !== action.payload._id),
+      };
+    
+      case 'UPDATE_TASK':
+        return {
+          tasks: state.tasks.map(task => 
+            task._id === action.payload._id ? action.payload : task
+          )
+          
+        };
       
     default:
-      return state
+      return state;
   }
-}
+};
+
 
 export const TaskContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(tasksReducer, {

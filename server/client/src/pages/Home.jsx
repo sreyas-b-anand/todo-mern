@@ -8,13 +8,12 @@ import New from "../components/New";
 import Navbar from "../components/Navbar";
 import UserProfileAccordion from "../components/userProfile";
 import { useLogout } from "../hooks/useLogout";
-import { useNavigate } from "react-router-dom";
 
 export const DisplayContext = createContext();
 const Home = () => {
   
   const { logout } = useLogout();
-  const navigate = useNavigate();
+  
   const [accordionDisplay, setAccordionDisplay] = useState(null);
 
   const { tasks, dispatch } = useTaskContext();
@@ -22,25 +21,35 @@ const Home = () => {
   const [display, setDisplay] = useState(false);
   const handleClick = () => {
     logout();
-    navigate("/");
+    
   };
 
   useEffect(() => {
-    const fetchWorkouts = async () => {
-      const response = await fetch("/api/tasker", {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
-      const json = await response.json();
-
-      if (response.ok) {
-        dispatch({ type: "GET_TASKS", payload: json });
+    const fetchTasks = async () => {
+      try {
+        const response = await fetch('http://localhost:4000/api/tasker', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}` // If you're using a token
+          },
+          credentials: 'include' // Include credentials if needed
+        });
+        if (!response.ok) {
+          throw new Error(`Fetch error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        if(response.ok){
+          dispatch({type : 'GET_TASKS' , payload:data})
+        }
+       
+      } catch (error) {
+        console.error('Fetch error:', error);
       }
     };
-
-    if (user) {
-      fetchWorkouts();
-    }
-  }, [dispatch, user]);
+    fetchTasks()
+    
+  }, [user , dispatch]);
 
   return (
     <>
@@ -81,7 +90,7 @@ const Home = () => {
           </div>
 
           {display && (
-            <div className={" z-20 absolute "}>
+            <div className={"z-20 absolute "}>
               <New />
             </div>
           )}
