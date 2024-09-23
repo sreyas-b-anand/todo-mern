@@ -45,7 +45,7 @@ const EditForm = () => {
     
       }
       fetchTask()
-    } , [])
+    } , [id , user])
   // Handle the form submission for updating the task
   const handleSubmit = async (e) => {
     e.preventDefault();
