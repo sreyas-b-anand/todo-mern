@@ -39,12 +39,7 @@ const Navbar = ({ accordionDisplay, setAccordionDisplay }) => {
             />
           </div>
         )}
-        {!user && (
-          <div>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-          </div>
-        )}
+        
       </nav>
     </div>
   );

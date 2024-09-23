@@ -8,12 +8,13 @@ import New from "../components/New";
 import Navbar from "../components/Navbar";
 import UserProfileAccordion from "../components/userProfile";
 import { useLogout } from "../hooks/useLogout";
+import { useNavigate } from "react-router-dom";
 
 export const DisplayContext = createContext();
 const Home = () => {
   
   const { logout } = useLogout();
-  
+  const navigate = useNavigate()
   const [accordionDisplay, setAccordionDisplay] = useState(null);
 
   const { tasks, dispatch } = useTaskContext();
@@ -21,6 +22,7 @@ const Home = () => {
   const [display, setDisplay] = useState(false);
   const handleClick = () => {
     logout();
+    navigate('/')
     
   };
 

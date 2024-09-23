@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
-  
+    navigate('/dashboard')
   };
 
   return (
@@ -24,7 +24,7 @@ const Login = () => {
           Log In
         </h3>
 
-        <label className="block text-gray-700 mb-2">Email address:</label>
+        <label className="block text-gray-700 mb-2">Email:</label>
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
