@@ -4,17 +4,24 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import { useContext } from "react";
 import { DisplayContext } from "../pages/Home";
 import { CgProfile } from "react-icons/cg";
-
+import logo from "../assets/logo.jpg";
 const Navbar = ({ accordionDisplay, setAccordionDisplay }) => {
   const { user } = useAuthContext();
   const { display, setDisplay } = useContext(DisplayContext);
 
   return (
     <div className=" bg-navbg flex  items-center justify-between w-screen h-[80px] text-navText">
-      <header className="flex items-baseline gap-8">
-        <p className=" text-navText flex items-center justify-center font-bold  text-2xl ml-9 gap-5">
-          Tasker
-        </p>
+      <header className="flex items-center justify-center  gap-7">
+        <section className="flex items-center justify-center gap-4 ml-8">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-[40px] h-[40px] rounded-[50%]"
+          />
+          <p className=" text-navText flex items-center justify-center font-bold  text-2xl ">
+            Tasker
+          </p>
+        </section>
         <nav className="mr-8 gap-2 flex">
           <Link
             onClick={() => {
@@ -39,7 +46,6 @@ const Navbar = ({ accordionDisplay, setAccordionDisplay }) => {
             />
           </div>
         )}
-        
       </nav>
     </div>
   );

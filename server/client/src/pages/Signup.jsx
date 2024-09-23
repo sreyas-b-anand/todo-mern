@@ -59,7 +59,7 @@ const Signup = () => {
         <p className="w-[100%] flex items-center justify-center p-4 gap-3">
           Already have an account?{" "}
           <Link
-            className="p-1 bg-blue-600 rounded text-white opacity-[0.8] hover:opacity-[1]"
+            className="p-2 px-6 bg-blue-600 rounded text-white opacity-[0.8] hover:opacity-[1]"
             to={"/login"}
           >
             Login

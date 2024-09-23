@@ -72,12 +72,12 @@ const EditForm = () => {
       setError(json.error);
     } else {
       // Redirect back to the dashboard after a successful edit
-      navigate("/");
+      navigate("/dashboard");
     }
   };
 
   const handleCancel = () => {
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (
