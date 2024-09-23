@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-2">
       <form
         className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full"
         onSubmit={handleSubmit}
@@ -54,7 +54,7 @@ const Login = () => {
         <p className="w-[100%] flex items-center justify-center p-4 gap-3">
           Create a new account?{" "}
           <Link
-            className="p-1 bg-blue-600 rounded text-white opacity-[0.8] hover:opacity-[1]"
+            className="p-2 px-4 font-[10px] min-w-32 flex items-center justify-center text-wrap bg-blue-600 rounded text-white opacity-[0.8] hover:opacity-[1]"
             to={"/signup"}
           >
             Sign Up
