@@ -46,7 +46,7 @@ const Home = () => {
         }
        
       } catch (error) {
-        console.error('Fetch error:', error);
+       // console.error('Fetch error:', error);
       }
     };
     fetchTasks()

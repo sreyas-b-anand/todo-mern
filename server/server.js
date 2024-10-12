@@ -5,11 +5,6 @@ import mongoose from 'mongoose';
 import taskerRouter from './routes/taskerRoutes.js';
 import cors from 'cors';
 import userRoutes from './routes/user.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Express app
 const app = express();
@@ -43,11 +38,4 @@ mongoose.connect(process.env.DBURI)
 app.use('/api/tasker', taskerRouter);
 app.use('/api/user', userRoutes);
 
-// Serve static files and handle React routing only in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '/client/build')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
-  });
-}
