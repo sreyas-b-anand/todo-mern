@@ -25,4 +25,19 @@ This is the **frontend** for a Todo application. The app connects to a backend h
 
    ```bash
    git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   cd client
+2. Install frontend dependencies:
+   ```bash
+   npm install
+3. Start the frontend
+   ```bash
+   npm run start
+ - By default, the backend is connected through a proxy in package.json, so no additional configuration is needed for local development.
+
+###Usage
+   - Visit the app at http://localhost:3000.
+###Contributing
+   - Contributions are welcome! Please open a pull request or an issue to contribute.
+
+###License
+   - This project is licensed under the MIT License.
