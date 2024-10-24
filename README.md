@@ -1,6 +1,6 @@
-# Todo App - Frontend
+# Tasker
 
-This is the **frontend** for a Todo application. The app connects to a backend hosted on Render for managing tasks.
+This is the simple Todo application built using React , Express JS , MongoDb , and Node JS.
 
 ## Features
 
@@ -10,7 +10,8 @@ This is the **frontend** for a Todo application. The app connects to a backend h
 ## Tech Stack
 
 - **Frontend**: React 
-- **Backend**: Hosted on [Render](https://render.com)
+- **Backend**: Express JS , Node JS , MongoDb
+- Hosted on [Render](https://render.com)
 
 ## Installation
 
