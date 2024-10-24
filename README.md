@@ -13,7 +13,7 @@ This is a simple Todo application built using React , Express JS , MongoDb , and
 - **Backend**: Express JS , Node JS , MongoDb
 - Hosted on [Render](https://render.com)
 
-## Installation
+## Installation - Frontend
 
 ### Prerequisites
 
