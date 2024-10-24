@@ -5,7 +5,6 @@ This is the **frontend** for a Todo application. The app connects to a backend h
 ## Features
 
 - Add, edit, and delete tasks.
-- Mark tasks as completed.
 - Responsive UI.
 
 ## Tech Stack
