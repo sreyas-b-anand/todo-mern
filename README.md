@@ -33,10 +33,10 @@ This is the **frontend** for a Todo application. The app connects to a backend h
    npm run start
  - By default, the backend is connected through a proxy in package.json, so no additional configuration is needed for local development.
 
-###Usage
+### Usage
    - Visit the app at http://localhost:3000.
-###Contributing
+### Contributing
    - Contributions are welcome! Please open a pull request or an issue to contribute.
 
-###License
+### License
    - This project is licensed under the MIT License.
