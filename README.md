@@ -10,7 +10,7 @@ This is the **frontend** for a Todo application. The app connects to a backend h
 
 ## Tech Stack
 
-- **Frontend**: React (or Next.js, etc.)
+- **Frontend**: React 
 - **Backend**: Hosted on [Render](https://render.com)
 
 ## Installation
