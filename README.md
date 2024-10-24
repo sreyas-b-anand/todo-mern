@@ -1,6 +1,6 @@
 # Tasker
 
-This is the simple Todo application built using React , Express JS , MongoDb , and Node JS.
+This is a simple Todo application built using React , Express JS , MongoDb , and Node JS.
 
 ## Features
 
