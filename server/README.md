@@ -22,11 +22,12 @@ This is the **backend** for the Todo application, hosted on Render.
 
 ### Steps
 
-1. Clone the repository:
-
+1. Clone the repository as mentioned in README.md for the whole repository and run the following commands
    ```bash
-   git clone https://github.com/yourusername/backend-repo.git
+   cd todo-mern
    cd server
+   
+
 2. Install dependencies:
    ```bash
    npm install
