@@ -1,5 +1,5 @@
 {
-  "proxy": "https://backend-mern-app-todo.onrender.com",
+  "proxy": "https://backend-todo-app-vgzb.onrender.com",
   "name": "client",
   "version": "0.1.0",
   "private": true,
