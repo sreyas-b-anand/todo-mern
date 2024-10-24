@@ -24,7 +24,7 @@ This is a simple Todo application built using React , Express JS , MongoDb , and
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/sreyas-b-anand/todo-mern.git
    cd todo-mern
    cd client
 2. Install frontend dependencies:
