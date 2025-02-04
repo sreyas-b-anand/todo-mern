@@ -1,19 +1,19 @@
-# Todo App - Frontend
+# Tasker
 
-This is the **frontend** for a Todo application. The app connects to a backend hosted on Render for managing tasks.
+This is a simple Todo application built using React , Express JS , MongoDb , and Node JS.
 
 ## Features
 
 - Add, edit, and delete tasks.
-- Mark tasks as completed.
 - Responsive UI.
 
 ## Tech Stack
 
 - **Frontend**: React 
-- **Backend**: Hosted on [Render](https://render.com)
+- **Backend**: Express JS , Node JS , MongoDb
+- Hosted on [Render](https://render.com)
 
-## Installation
+## Installation - Frontend
 
 ### Prerequisites
 
@@ -24,5 +24,21 @@ This is the **frontend** for a Todo application. The app connects to a backend h
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/sreyas-b-anand/todo-mern.git
+   cd todo-mern
+   cd client
+2. Install frontend dependencies:
+   ```bash
+   npm install
+3. Start the frontend
+   ```bash
+   npm run start
+ - By default, the backend is connected through a proxy in package.json, so no additional configuration is needed for local development.
+
+### Usage
+   - Visit the app at http://localhost:3000.
+### Contributing
+   - Contributions are welcome! Please open a pull request or an issue to contribute.
+
+### License
+   - This project is licensed under the MIT License.
